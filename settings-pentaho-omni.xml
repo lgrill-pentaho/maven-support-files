@@ -6,12 +6,12 @@
   <mirrors>
     <mirror>
       <id>pentaho.resolve.repo</id>
-      <url>${env.PRIMARY_REPO_URL}</url>
+      <url>http://nexus.pentaho.org/content/groups/omni</url>
       <mirrorOf>!plugins,*</mirrorOf>
     </mirror>
     <mirror>
       <id>plugins.mirror</id>
-      <url>${env.OMNIBUS_REPO_URL}</url>
+      <url>http://nexus.pentaho.org/content/groups/omni</url>
       <mirrorOf>plugins</mirrorOf>
     </mirror>
   </mirrors>
