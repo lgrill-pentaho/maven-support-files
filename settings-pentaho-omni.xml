@@ -28,13 +28,13 @@
           <name>Primary Repo</name>
           <url>http://nexus.pentaho.org/content/groups/omni</url>
           <releases>
-            <enabled/>
-            <updatePolicy/>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
             <checksumPolicy/>
           </releases>
           <snapshots>
             <enabled>true</enabled>
-            <updatePolicy>daily</updatePolicy>
+            <updatePolicy>interval:60</updatePolicy>
             <checksumPolicy/>
           </snapshots>
         </repository>
