@@ -3,47 +3,56 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
+  <!--
+    This is the recommended settings.xml for development of Pentaho projects.  It is recommended that community
+    members doing active development of other non-Pentaho related projects in Maven consider using the
+    community-settings.xml as their settings.xml, or some similar strategy.
+
+    You should copy this file to your ~/.m2 directory and save it as settings.xml
+  -->
+
   <mirrors>
     <mirror>
       <id>pentaho.resolve.repo</id>
       <url>http://nexus.pentaho.org/content/groups/omni</url>
       <mirrorOf>!plugins,*</mirrorOf>
     </mirror>
-    <mirror>
-      <id>plugins.mirror</id>
-      <url>http://nexus.pentaho.org/content/groups/omni</url>
-      <mirrorOf>plugins</mirrorOf>
-    </mirror>
   </mirrors>
 
   <profiles>
     <profile>
-      <id>pentaho-repos-profile</id>
+      <id>central</id>
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
       <repositories>
         <repository>
-          <id>central</id>
-          <name>Primary Repo</name>
+          <id>pentaho.resolve.repo</id>
+          <name>Pentaho Omni</name>
           <url>http://nexus.pentaho.org/content/groups/omni</url>
           <releases>
             <enabled>true</enabled>
-            <updatePolicy>daily</updatePolicy>
-            <checksumPolicy/>
+            <updatePolicy>always</updatePolicy>
           </releases>
           <snapshots>
             <enabled>true</enabled>
-            <updatePolicy>interval:60</updatePolicy>
-            <checksumPolicy/>
+            <updatePolicy>always</updatePolicy>
           </snapshots>
         </repository>
       </repositories>
       <pluginRepositories>
         <pluginRepository>
           <id>plugins</id>
-          <name>Plugin Repo</name>
-          <url>https://repo1.maven.org/maven2</url>
+          <name>Maven Central</name>
+          <url>http://repo1.maven.org/maven2</url>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
         </pluginRepository>
       </pluginRepositories>
     </profile>
